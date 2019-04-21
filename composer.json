@@ -1,20 +1,16 @@
 {
-  "name": "inani/chibi",
-  "description": "The Chibi Framework.",
+  "name": "inani/chibi-app",
+  "description": "A Chibi Framework app.",
   "keywords": ["framework", "Chibi", "PHP"],
   "license": "MIT",
   "support": {
-    "issues": "https://github.com/akiyamaSM/chibi/issues",
-    "source": "https://github.com/akiyamaSM/chibi"
+    "issues": "https://github.com/akiyamaSM/chibi-app/issues",
+    "source": "https://github.com/akiyamaSM/chibi-app"
   },
   "authors": [
     {
       "name": "El Houssain INANI",
       "email": "inanielhoussain@gmail.com"
-    },
-    {
-      "name": "Anas El Alami",
-      "email": "anaselalamikh@gmail.com"
     }
   ],
   "autoload": {
@@ -22,18 +18,8 @@
       "App\\": "app/"
     }
   },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "packages/yumi/console"
-    }
-  ],
   "require": {
-    "inani/chibi": "2.0.*"
+    "inani/chibi": "dev-master"
   },
-  "require-dev" :{
-    "yumi/console":"dev-master"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  "minimum-stability": "dev"
 }
