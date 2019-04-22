@@ -4,7 +4,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const isDev = process.env.NODE_ENV === "dev"
 const isProd = !isDev
 
-const js = require('./kolores.config')
+const js = require('./chibi.config')
 
 module.exports = {
         entry: js.source,
