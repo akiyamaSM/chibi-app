@@ -12,7 +12,6 @@
     <div id="wrapper" class="flex h-screen items-center justify-center">
             <p class="text-white text-2xl font-mono" id="text"></p>
     </div>
-
     <script>
         typeString = ['Welcome, Feel free to use me :D'];
         let  i = 0;

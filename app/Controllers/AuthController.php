@@ -3,10 +3,11 @@
 namespace App\Controllers;
 
 
-use Chibi\Auth\Auth;
-use Chibi\Controller\Controller;
+use App\Constraints\UserName;
 use Chibi\Request;
+use Chibi\Auth\Auth;
 use Chibi\Validation\Rule;
+use Chibi\Controller\Controller;
 
 class AuthController extends Controller
 {
@@ -34,13 +35,22 @@ class AuthController extends Controller
         $validator = $this
             ->validate($request->except('csrf_token'))
             ->addRule(
-                ( new Rule('username'))->required()
+                ( new Rule('username'))->required()->inject( new UserName())
             )->addRule(
                 ( new Rule('password'))->required()
             );
 
         if(!$validator->check()){
-            flash('error', 'Fields are required');
+            if(count($errors = $validator->getErrors()) === 2)
+            {
+                flash('error', [
+                    [
+                        'Please fill fields'
+                    ]
+                ]);
+            }else{
+                flash('error', $errors);
+            }
 
             return redirect(route('auth.login'));
         }
@@ -54,7 +64,11 @@ class AuthController extends Controller
             ]);
         }
 
-        flash('error', 'Bad Credentials');
+        flash('error', [
+            [
+                'Bad Credentials'
+            ]
+        ]);
 
         return redirect(route('auth.login'));
     }

@@ -3,8 +3,9 @@ return [
 	"debug" => true,
 	'hello' => [],
 	"database" => [
-		'username' => 'root',
-		'password' => 'root',
-		'db_name' => 'chibi',
+        'host' => 'localhost',
+        'username' => 'root',
+        'password' => 'root',
+        'db_name' => 'chibi',
 	]
 ];
