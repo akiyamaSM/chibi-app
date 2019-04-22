@@ -19,7 +19,8 @@
     }
   },
   "require": {
-    "inani/chibi": "dev-master"
+    "inani/chibi": "dev-master",
+    "inani/chibi-console": "dev-master"
   },
   "minimum-stability": "dev"
 }
